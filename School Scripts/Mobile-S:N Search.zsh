@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #S/N List
-mobileSerialList=$(curl -X GET "https://mdirss.jamfcloud.com/JSSResource/mobiledevices" -H "accept: application/xml" -fsu enrollment:mdirss | xmllint --xpath "mobile_devices/mobile_device/serial_number/text()" -)
+mobileSerialList=$(curl -X GET "https://mdirss.jamfcloud.com/JSSResource/mobiledevices" -H "accept: application/xml" -fsu enrollment:REDACTED | xmllint --xpath "mobile_devices/mobile_device/serial_number/text()" -)
 
 #insert serial to check
 #mySerial=C07CW1M3JG2X
