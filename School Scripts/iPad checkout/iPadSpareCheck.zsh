@@ -1,7 +1,5 @@
 #.!/bin/zsh
 
-#credentials=tbrown:Knothole11
-
 #prompt creds
 credentials=$(osascript << EOF
 text returned of (display dialog "Please enter credentials: username:password" default answer "" buttons {"Cancel", "Continue"} default button "Continue")
