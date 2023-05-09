@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 ####Generate Bearer Token###
-#Basic=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+#Basic= removed for security 
 #BEARER=$(curl -X POST "https://mdirss.jamfcloud.com/api/v1/auth/token" -H "accept: application/json" -H "Authorization: Basic $Basic")
 #echo "successful generation of bearer token: $BEARER"
 #
@@ -55,7 +55,8 @@ deviceID=2699
 #vari="Computer Loaned To"
 #
 
-api_token=eyJhbGciOiJIUzI1NiJ9.eyJhdXRoZW50aWNhdGVkLWFwcCI6IkdFTkVSSUMiLCJhdXRoZW50aWNhdGlvbi10eXBlIjoiSlNTIiwiZ3JvdXBzIjpbXSwic3ViamVjdC10eXBlIjoiSlNTX1VTRVJfSUQiLCJ0b2tlbi11dWlkIjoiMjkxM2FiMmYtYjU2Zi00YTQzLTgyN2EtNzIzNzUwZjUyNTVhIiwibGRhcC1zZXJ2ZXItaWQiOi0xLCJzdWIiOiIxOCIsImV4cCI6MTY2OTk5NDM3OH0.k44QmIakRZVx-r_VyG6FalK72hWzfhFVxLFmXtuTEbE
+##chunk removed for security 
+api_token=eyJhbGciOiJIUzI1NiJ9.eyJhdXRoZW50aWNhdGVkLWFwcCI6Ikd.....GRhcC1zZXJ2ZXItaWQiOi0xLCJzdWIiOiIxOCIsImV4cCI6MTY2OTk5NDM3OH0.k44QmIakRZVx-r_VyG6FalK72hWzfhFVxLFmXtuTEbE
 
 
 value=$(curl -X GET "$jamfProUrl/JSSResource/computers/id/2699" -H "accept: application/xml" -H "Authorization: Bearer $api_token" | xmllint --xpath "computer/extension_attributes/extension_attribute[id=11]" -)
