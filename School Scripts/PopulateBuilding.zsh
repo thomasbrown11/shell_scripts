@@ -8,13 +8,13 @@ serialNumber=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $
 echo $serialNumber
 
 ##GENERATE BEARER TOKEN FOR API CALLS##################
-#TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
 
 function DecryptString() {
     echo "${1}" | /usr/bin/openssl enc -aes256 -md md5 -d -a -A -S "${2}" -k "${3}"
 }
 
-TOKEN=$(DecryptString U2FsdGVkX198+NoiNg9DEZ67T+Ua0LNJR5FM6ynfYXqxb0RplAOzEs/XgOqYa/sKQKws2O0C5QPkgekf0Y7VDw== 7cf8da22360f4311 09de0192edd3e4caaf3cb796)
+##removed decryption string
+TOKEN=$(DecryptString ?? 7cf8da22360f4311 09de0192edd3e4caaf3cb796)
 echo $TOKEN
 
 #generate new token for jamf pro api calls... lasts 30 minutes
