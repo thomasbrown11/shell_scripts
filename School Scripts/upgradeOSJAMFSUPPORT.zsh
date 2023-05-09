@@ -3,13 +3,13 @@
 # Get username and password encoded in base64 format and stored as a variable in a script:
 #TOKEN=$(printf username:password | /usr/bin/iconv -t ISO-8859-1 | /usr/bin/base64 -i -)
 
-TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+TOKEN=REMOVED
 
 #!/bin/bash
 
 URL="https://mdirss.jamfcloud.com"
 username=tbrown
-password=secretPassword12
+password=REMOVED
 encodedCredentials=$( printf "$username:$password" | /usr/bin/iconv -t ISO-8859-1 | /usr/bin/base64 -i - )
 echo $encodedCredentials
 authToken=$( /usr/bin/curl "$URL/api/v1/auth/token" \
