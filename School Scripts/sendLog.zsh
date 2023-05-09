@@ -2,7 +2,7 @@
 
 #variables
 jamfProUrl=https://mdirss.jamfcloud.com/JSSResource
-jamfCreds=enrollment:mdirss
+jamfCreds=user:pw
 mySerial=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $4}')
 deviceID=$(curl -sku ${jamfCreds} -X GET -H "accept: application/xml" "${jamfProUrl}/computers/serialnumber/${mySerial}" | xmllint --xpath '//general/id/text()' -)
 
