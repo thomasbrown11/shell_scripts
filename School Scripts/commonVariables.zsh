@@ -2,7 +2,7 @@
 
 jamfProUrl=https://mdirss.jamfcloud.com/JSSResource
 
-jamfCreds=enrollment:mdirss
+jamfCreds=REDACTED
 
 
 loggedInUser=$(scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }')
