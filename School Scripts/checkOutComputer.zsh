@@ -10,7 +10,6 @@ echo serialNumber $serialNumber
 
 # Get username and password encoded in base64 format and stored as a variable in a script:
 #TOKEN=$(printf username:password | /usr/bin/iconv -t ISO-8859-1 | /usr/bin/base64 -i -)
-TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
 
 #generate new token for jamf pro api calls... lasts 30 minutes
 BEARER=$(curl -X POST "https://mdirss.jamfcloud.com/api/v1/auth/token" -H "accept: application/json" -H "Authorization: Basic $TOKEN")
@@ -103,21 +102,6 @@ osascript << EOF
 display dialog "$serialNumber returned to the $loanOption group" buttons {"OK"} default button 1
 EOF
 fi
-
-#you should write a companion policy to check the user out on logout
-#literally just grab credentials (id parts of this script) and return to pile on logout
-
-#this works as long as checkout script always happens on login
-
-#need to implement a way to force users to run this. Maybe just agressive recurrence if params empty?
-
-#make dialogue screen unskippable?
-
-#base features working... should you remove ready to loan option and instead implement the second policy to return?
-
-#need to remove cancel button as this isn't an optional process... if cancel hit then breaks program currently
-
-#need to error handle to at least ensure that the user name is filled in with something
 
 loanOptionTest=$(osascript << EOF
 try
