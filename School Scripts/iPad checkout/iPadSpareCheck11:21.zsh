@@ -3,7 +3,7 @@
 #credentials=tbrown:Knothole11
 
 #S/N List for all MDIRSS devices
-mobileSerialList=$(curl -X GET "https://mdirss.jamfcloud.com/JSSResource/mobiledevices" -H "accept: application/xml" -fsu enrollment:mdirss | xmllint --xpath "mobile_devices/mobile_device/serial_number/text()" -)
+mobileSerialList=$(curl -X GET "https://mdirss.jamfcloud.com/JSSResource/mobiledevices" -H "accept: application/xml" -fsu enrollment:REDACTED | xmllint --xpath "mobile_devices/mobile_device/serial_number/text()" -)
 
 echo $mobileSerialList
 
