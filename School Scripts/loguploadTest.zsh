@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 ###Generate Bearer Token###
-Basic=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+Basic=removed
 BEARER=$(curl -X POST "https://mdirss.jamfcloud.com/api/v1/auth/token" -H "accept: application/json" -H "Authorization: Basic $Basic")
 echo "successful generation of bearer token: $BEARER"
 
