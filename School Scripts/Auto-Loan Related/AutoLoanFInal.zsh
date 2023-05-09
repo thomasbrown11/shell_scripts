@@ -7,7 +7,7 @@
 # to exit on error thrown as well include: trap "exit" INT TERM ERR rather than next line
 #INT refers to a CTR+C stop, ERR is any error
 trap "exit" TERM
-borrowTmpLocation=/var/tmp/borrowLog #variable incorrect
+borrowTmpLocation=/var/tmp/borrowLog 
 returnTmpLocation=/var/tmp/returnLog
 trap "rm -rf $borrowTmpLocation; rm -rf $returnTmpLocation; kill 0" EXIT
 #################################
@@ -28,13 +28,13 @@ serialNumber=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $
 echo $serialNumber
 
 ##GENERATE BEARER TOKEN FOR API CALLS##################
-#TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
 
 function DecryptString() {
     echo "${1}" | /usr/bin/openssl enc -aes256 -md md5 -d -a -A -S "${2}" -k "${3}"
 }
 
-TOKEN=$(DecryptString U2FsdGVkX198+NoiNg9DEZ67T+Ua0LNJR5FM6ynfYXqxb0RplAOzEs/XgOqYa/sKQKws2O0C5QPkgekf0Y7VDw== 7cf8da22360f4311 09de0192edd3e4caaf3cb796)
+##first parameter removed for security purposes
+TOKEN=$(DecryptString ?? 7cf8da22360f4311 09de0192edd3e4caaf3cb796)
 echo $TOKEN
 
 #generate new token for jamf pro api calls... lasts 30 minutes
@@ -65,9 +65,6 @@ echo "your deviceID is $deviceID"
 adminLogID=$(curl -k -H "Authorization: Bearer $api_token" -H "accept: application/xml" "$jamfProUrl/JSSResource/computers/serialnumber/C02FN2PSQ05P" | xmllint --xpath '//general/id/text()' -)
 echo "your adminLogID is $adminLogID"
 
-
-#START PASTE HERE*************************************************************************************************************************************
-#*****************************************************************************************************************************************************
 while [[ $notCanceled != true ]]
 do
   #prompt for borrowing/returning########
