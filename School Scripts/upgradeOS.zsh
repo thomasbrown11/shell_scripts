@@ -3,7 +3,7 @@
 # Get username and password encoded in base64 format and stored as a variable in a script:
 #TOKEN=$(printf username:password | /usr/bin/iconv -t ISO-8859-1 | /usr/bin/base64 -i -)
 
-TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+TOKEN=REMOVED
 
 #enter serial here, or send to device to have them run it (uncomment alt serialNumber definition)
 #serialNumber=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $4}')
