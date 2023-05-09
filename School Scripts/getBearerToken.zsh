@@ -12,7 +12,7 @@
 
 
 #function GenerateEncryptedString () {
-#    # Usage ~$ GenerateEncryptedString dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+#    # Usage ~$ GenerateEncryptedString REDACTED (convert user:pw to 64base string)
 #    local STRING="${1}"
 #    echo $STRING
 #    local SALT=$(openssl rand -hex 8)
@@ -22,9 +22,8 @@
 #    echo "Salt: ${SALT} | Passphrase: ${K}"
 #}
 #
-#GenerateEncryptedString dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+#GenerateEncryptedString 
 
-#Encrypted String: U2FsdGVkX198+NoiNg9DEZ67T+Ua0LNJR5FM6ynfYXqxb0RplAOzEs/XgOqYa/sKQKws2O0C5QPkgekf0Y7VDw==
 #Salt: 7cf8da22360f4311 | Passphrase: 09de0192edd3e4caaf3cb796
 
 #
@@ -54,7 +53,7 @@ echo "the token is $TOKEN"
 
 
 
-#TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+#TOKEN=REDACTED
 #
 ##generate new token for jamf pro api calls... lasts 30 minutes
 #BEARER=$(curl -X POST "https://mdirss.jamfcloud.com/api/v1/auth/token" -H "accept: application/json" -H "Authorization: Basic $TOKEN")
