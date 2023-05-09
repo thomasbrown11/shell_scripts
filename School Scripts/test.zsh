@@ -34,13 +34,13 @@ echo serialNumber $serialNumber
 ####################GENERATE BEARER TOKEN FOR API CALLS
 #include encryption process at end (bearerTest.zsh)
 #basic
-#TOKEN=dGJyb3duOnNlY3JldFBhc3N3b3JkMTI=
+#TOKEN=REMOVED
 
 function DecryptString() {
     echo "${1}" | /usr/bin/openssl enc -aes256 -md md5 -d -a -A -S "${2}" -k "${3}"
 }
 
-TOKEN=$(DecryptString $1 7cf8da22360f4311 09de0192edd3e4caaf3cb796) #change $1 to $4 for deployment insert U2FsdGVkX198+NoiNg9DEZ67T+Ua0LNJR5FM6ynfYXqxb0RplAOzEs/XgOqYa/sKQKws2O0C5QPkgekf0Y7VDw== at box
+TOKEN=$(DecryptString $1 7cf8da22360f4311 09de0192edd3e4caaf3cb796) #change $1 to $4 for deployment insert REMOVED at box
 
 #generate new token for jamf pro api calls... lasts 30 minutes
 BEARER=$(curl -X POST "https://mdirss.jamfcloud.com/api/v1/auth/token" -H "accept: application/json" -H "Authorization: Basic $TOKEN")
